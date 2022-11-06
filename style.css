@@ -125,3 +125,48 @@ header{
 .navigation ul li:nth-child(5).active ~ .indicator{
     transform: translateY(calc(60px * 4));
 }
+
+.toggle{
+    display: none;
+}
+
+@media only screen and (max-width: 950px){
+    .toggle{
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background: #fd5329;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .toggle.active{
+        background:#fd3029;
+    }
+    .toggle ion-icon{
+        position: absolute;
+        color:#fff;
+        font-size: 34px;
+        display: none;
+    }
+    .toggle ion-icon.open,
+    .toggle.active ion-icon.close{
+        display: block;
+    }
+    .toggle ion-icon.close,
+    .toggle.active ion-icon.open{
+        display: none;
+    }
+    .navigation{
+        transform: translateX(-150px);
+        transition: 0.5s;
+    }
+    .navigation.active{
+        transform: translateX(0px);
+        transition: 0.5s;
+    }
+}
